@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c39779d6-00a0-4824-8a34-f2abee4d3753" name="Changes" comment="3">
-      <change afterPath="$PROJECT_DIR$/src/Project/Ideone.java" afterDir="false" />
+    <list default="true" id="c39779d6-00a0-4824-8a34-f2abee4d3753" name="Changes" comment="4">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Files/input.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Files/output.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Project/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Project/Project.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -114,7 +111,21 @@
       <option name="project" value="LOCAL" />
       <updated>1673466213498</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Регулярные выражения">
+      <created>1673469008997</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1673469008997</updated>
+    </task>
+    <task id="LOCAL-00009" summary="4">
+      <created>1673469079350</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1673469079350</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -131,8 +142,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="1" />
     <MESSAGE value="2" />
-    <MESSAGE value="4" />
     <MESSAGE value="3" />
-    <option name="LAST_COMMIT_MESSAGE" value="3" />
+    <MESSAGE value="Регулярные выражения" />
+    <MESSAGE value="4" />
+    <option name="LAST_COMMIT_MESSAGE" value="4" />
   </component>
 </project>

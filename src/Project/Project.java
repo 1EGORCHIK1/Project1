@@ -30,7 +30,7 @@ public class Project {
                 continue;
             }
             try {
-                text = text.replace(expression, Ideone.calc(ExpressionParser.parse(expression)));
+                text = text.replace(expression, Ideone.calc(Expression.parse(expression)));
             }
             catch(Exception e){
                 ///
@@ -107,4 +107,57 @@ public class Project {
         return filename;
     }
 
+    public void sendFile(String filename) {
+
+        try {
+            PrintWriter printWriter = new PrintWriter(os, true);
+            printWriter.println(filename);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        byte[] b = new byte[1];
+        File f = new File(filename);
+        try {// Поток вывода данных
+            OutputStream dout = new DataOutputStream(new BufferedOutputStream(s.getOutputStream ())); // Поток чтения файла
+            InputStream ins = new FileInputStream(f);
+            int n = ins.read(b);
+            while (n != -1) {// Запись данных в сеть
+                dout.write (b); // Отправить содержимое файла
+                dout.flush (); // снова прочитать n байтов
+                n = ins.read(b);
+            } // Закрыть поток
+            ins.close();
+            dout.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    public static void create(String filename){
+        try {
+            File myObj = new File(filename);
+            if (myObj.createNewFile()) {
+                System.out.println("File created: " + myObj.getName());
+            } else {
+                System.out.println("File already exists.");
+            }
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+    }
+
+    public static void delete(String filename){
+        File file = new File(filename);
+        if(file.delete())
+        {
+            System.out.println("File deleted successfully");
+        }
+        else
+        {
+            System.out.println("Failed to delete the file");
+        }
+    }
 }

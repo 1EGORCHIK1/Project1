@@ -26,5 +26,4 @@ public class Ideone {
         }
         return stack.pop().toString();
     }
-
 }
