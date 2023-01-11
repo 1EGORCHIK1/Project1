@@ -19,7 +19,7 @@ public class Project {
     private String filename;
 
     void RPN() {
-        Project readWrite = new Project();
+        Readingwritingfile readWrite = new Readingwritingfile();
         String text = readWrite.read(filename);
 
         Pattern MY_PATTERN = Pattern.compile("[()0-9]*( ){0,}([+-/*]( ){0,}[()0-9]{0,})*");
@@ -94,11 +94,11 @@ public class Project {
             RandomAccessFile fw = new RandomAccessFile(f, "rw");
 
             int num = din.read(b);
-            while (num != -1) {// Записать 0 ~ num байтов в файл
-                fw.write(b, 0, num); // Пропустить num байтов и снова записать в файл
-                fw.skipBytes(num); // Чтение num байтов
+            while (num != -1) {
+                fw.write(b, 0, num);
+                fw.skipBytes(num);
                 num = din.read(b);
-            } // Закрыть входной и выходной потоки
+            }
             din.close();
             fw.close();
         } catch (Exception e) {
@@ -122,9 +122,9 @@ public class Project {
             OutputStream dout = new DataOutputStream(new BufferedOutputStream(s.getOutputStream ())); // Поток чтения файла
             InputStream ins = new FileInputStream(f);
             int n = ins.read(b);
-            while (n != -1) {// Запись данных в сеть
-                dout.write (b); // Отправить содержимое файла
-                dout.flush (); // снова прочитать n байтов
+            while (n != -1) {
+                dout.write (b);
+                dout.flush ();
                 n = ins.read(b);
             } // Закрыть поток
             ins.close();
