@@ -1,53 +1,45 @@
 package Project;
 
 import java.io.*;
-import java.io.File;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.Arrays;
-import java.util.Scanner;
-import java.util.regex.Pattern;
-import java.util.regex.Matcher;
+import java.net.InetAddress;
+import java.net.ServerSocket;
+import java.net.Socket;
 import java.util.List;
-import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
- class Project {
-    public static void main(String[] args)
-    {
-        try(FileInputStream fin=new FileInputStream("/Users/egorchik/Downloads/Project1/src/input.txt");
-            FileOutputStream fos=new FileOutputStream("/Users/egorchik/Downloads/Project1/src/output.txt"))
-        {
-            byte[] buffer = new byte[fin.available()];
-            fin.read(buffer, 0, buffer.length);
-            fos.write(buffer, 0, buffer.length);
+public class Project {
+    private Socket s;
 
-            String str=null;
+    OutputStream os;
+    InputStream is;
+
+    private String flag;
+    private String filename;
+
+    void RPN() {
+        Project readWrite = new Project();
+        String text = readWrite.read(filename);
+
+        Pattern MY_PATTERN = Pattern.compile("[()0-9]*( ){0,}([+-/*]( ){0,}[()0-9]{0,})*");
+        Matcher m = MY_PATTERN.matcher(text);
+        while (m.find()) {
+            String expression = m.group();
+            if(expression.equals("") || expression.equals(" ")) {
+                continue;
+            }
             try {
-                List<String> s = Files.readAllLines(Paths.get("/Users/egorchik/Downloads/Project1/src/input.txt"), StandardCharsets.UTF_8);
-                str=String.join(System.lineSeparator(), s);
-            } catch (IOException e) {
-                e.printStackTrace();
+                text = text.replace(expression, Ideone.calc(ExpressionParser.parse(expression)));
             }
-
-            // File file = new File("/Users/egorchik/Downloads/Project1/src/input.txt");
-            //Scanner scan = new Scanner(file);
-            // String str = scan.nextLine();
-            Pattern pattern = Pattern.compile("(\\d+(\\.\\d+)?)|(\\+|\\-|\\*|\\/)");
-            Matcher matcher = pattern.matcher(str);
-            List<String> strings = new ArrayList<>();
-            while (matcher.find()) {
-                strings.add(matcher.group());
+            catch(Exception e){
+                ///
             }
-            //Integer i1 = new Integer(str);
-            //System.out.println(i1);
-            System.out.print(strings);
         }
-        catch(IOException ex){
-
-            System.out.println(ex.getMessage());
-        }
-
-
+        readWrite.write(filename, text);
     }
+
+
+
+
 }
