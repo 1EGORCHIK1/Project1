@@ -5,23 +5,23 @@ import java.io.File;
 class Main {
     public static void main(String[] args) {
         while(true) {
-            Project serverget = new Project();
-            serverget.initServer(9527);
+            Project projectget = new Project();
+            projectget.initServer(9527);
             System.out.println("Please wait");
-            String getf = serverget.getFile();
+            String getf = projectget.getFile();
             File f1 = new File(getf);
             f1.deleteOnExit();
-            serverget.RPN();
+            projectget.RPN();
 
-            String trFile = serverget.transformFile();
+            String trFile = projectget.transformFile();
             System.out.println("Done!");
-            serverget.serverStop();
-            Project serversend = new Project();
-            serversend.initServer(9528);
-            serversend.sendFile(trFile);
+            projectget.serverStop();
+            Project projectsend = new Project();
+            projectsend.initServer(9528);
+            projectsend.sendFile(trFile);
             File f2 = new File(trFile);
             f2.deleteOnExit();
-            serversend.serverStop();
+            projectsend.serverStop();
         }
     }
 }

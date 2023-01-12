@@ -39,6 +39,46 @@ public class Project {
         readWrite.write(filename, text);
     }
 
+    String transformFile() {
+        Readingwritingfile readWrite = new Readingwritingfile();
+        create("new" + filename);
+        readWrite.write("new" + filename, readWrite.read(filename));
+        delete(filename);
+        filename = "new" + filename;
+
+        if (flag.equals(""))
+            return filename;
+
+        String command = null;
+        while (!flag.equals("")) {
+            command = flag.substring(0, 2);
+            flag = flag.substring(2);
+            //System.out.println(command);
+
+            if (command.equals("Ee")) {
+                if (filename.contains(".zip")) {
+                    delete(filename);
+                    filename = filename.replaceAll(".zip", "");
+                }
+                Encryption encryption = new Encryption(readWrite);
+                String text = readWrite.read(filename);
+                encryption.write(filename, text);
+            }
+
+            if (command.equals("Ed")) {
+                if (filename.contains(".zip")) {
+                    delete(filename);
+                    filename = filename.replaceAll(".zip", "");
+                }
+                Encryption encryption = new Encryption(readWrite);
+                String text = encryption.read(filename);
+                readWrite.write(filename, text);
+            }
+
+        }
+        return filename;
+    }
+
 
 
     public void connectSocketServer(int port) {
