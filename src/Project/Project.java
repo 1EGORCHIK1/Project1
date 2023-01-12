@@ -97,10 +97,29 @@ public class Project {
                 filename = filename.replaceAll(".zip", "");
             }
 
+            if (command.equals("Cc")) {
+                if (filename.contains(".zip")) {
+                    delete(filename);
+                    filename = filename.replaceAll(".zip", "");
+                }
+                Compress compress = new Compress(readWrite);
+                String text = readWrite.read(filename);
+                compress.write(filename, text);
+            }
+
+            if (command.equals("Cd")) {
+                if (filename.contains(".zip")) {
+                    delete(filename);
+                    filename = filename.replaceAll(".zip", "");
+                }
+                Compress compress = new Compress(readWrite);
+                String text = compress.read(filename);
+                readWrite.write(filename, text);
+            }
+
         }
         return filename;
     }
-
 
 
     public void connectSocketServer(int port) {
@@ -179,7 +198,7 @@ public class Project {
 
         byte[] b = new byte[1];
         File f = new File(filename);
-        try {// Поток вывода данных
+        try {
             OutputStream dout = new DataOutputStream(new BufferedOutputStream(s.getOutputStream ()));
             InputStream ins = new FileInputStream(f);
             int n = ins.read(b);
@@ -187,7 +206,7 @@ public class Project {
                 dout.write (b);
                 dout.flush ();
                 n = ins.read(b);
-            } // Закрыть поток
+            }
             ins.close();
             dout.close();
         } catch (IOException e) {
