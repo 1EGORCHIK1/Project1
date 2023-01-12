@@ -75,6 +75,28 @@ public class Project {
                 readWrite.write(filename, text);
             }
 
+            if (command.equals("Zz")) {
+                if (filename.contains(".zip")) {
+                    continue;
+                }
+                Zipper zipper = new Zipper(readWrite);
+                String text = readWrite.read(filename);
+                zipper.write(filename, text);
+                filename += ".zip";
+            }
+
+            if (command.equals("Zu")) {
+                if (!filename.contains(".zip")) {
+                    continue;
+                }
+                Zipper zipperDecorator = new Zipper(readWrite);
+                String text = zipperDecorator.read(filename);
+                readWrite.write(filename, text);
+
+                delete(filename);
+                filename = filename.replaceAll(".zip", "");
+            }
+
         }
         return filename;
     }
@@ -99,9 +121,8 @@ public class Project {
     public void initServer(int port){
         while (s == null) {
             try {
-                s = new Socket(InetAddress.getLocalHost(), port); // Подключиться к серверу
+                s = new Socket(InetAddress.getLocalHost(), port);
             } catch (IOException e) {
-                //e.printStackTrace();
             }
         }
 
@@ -111,7 +132,7 @@ public class Project {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    } // чтение файла из SocketClient
+    }
 
     public void serverStop(){
         try {
@@ -125,9 +146,9 @@ public class Project {
 
     public String getFile() {
         byte[] b=new byte[1024];
-        try {// Определим входной поток,
+        try {
             InputStream in = is;
-            DataInputStream din = new DataInputStream (new BufferedInputStream(in)); // Создать файл для сохранения
+            DataInputStream din = new DataInputStream (new BufferedInputStream(in));
             filename = din.readLine();
             flag = din.readLine();
             File f = new File(filename);
@@ -159,7 +180,7 @@ public class Project {
         byte[] b = new byte[1];
         File f = new File(filename);
         try {// Поток вывода данных
-            OutputStream dout = new DataOutputStream(new BufferedOutputStream(s.getOutputStream ())); // Поток чтения файла
+            OutputStream dout = new DataOutputStream(new BufferedOutputStream(s.getOutputStream ()));
             InputStream ins = new FileInputStream(f);
             int n = ins.read(b);
             while (n != -1) {
