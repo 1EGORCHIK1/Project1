@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c39779d6-00a0-4824-8a34-f2abee4d3753" name="Changes" comment="zip">
+    <list default="true" id="c39779d6-00a0-4824-8a34-f2abee4d3753" name="Changes" comment="comp">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Project1.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Project/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Project/Project.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -34,6 +35,10 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/egorchik/Downloads/Project1&quot;
@@ -153,7 +158,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673548159953</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="comp">
+      <created>1673551315448</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1673551315448</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -177,6 +189,7 @@
     <MESSAGE value="6" />
     <MESSAGE value="Шифрование" />
     <MESSAGE value="zip" />
-    <option name="LAST_COMMIT_MESSAGE" value="zip" />
+    <MESSAGE value="comp" />
+    <option name="LAST_COMMIT_MESSAGE" value="comp" />
   </component>
 </project>

@@ -129,7 +129,7 @@ public class Project {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        try {
+         try {
             is = s.getInputStream();
             os = s.getOutputStream();
         } catch (IOException e) {
@@ -142,6 +142,7 @@ public class Project {
             try {
                 s = new Socket(InetAddress.getLocalHost(), port);
             } catch (IOException e) {
+                // System.out.println("error");
             }
         }
 
