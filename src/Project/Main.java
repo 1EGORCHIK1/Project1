@@ -4,7 +4,7 @@ import java.io.File;
 
 class Main {
     public static void main(String[] args) {
-        while(true) {
+        while (true) {
             Project projectget = new Project();
             projectget.initServer(9527);
             System.out.println("Please wait");

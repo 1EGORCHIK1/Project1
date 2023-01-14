@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c39779d6-00a0-4824-8a34-f2abee4d3753" name="Changes" comment="UnitTests" />
+    <list default="true" id="c39779d6-00a0-4824-8a34-f2abee4d3753" name="Changes" comment="б">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Project/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Project/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Project/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Project/Project.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -182,7 +186,21 @@
       <option name="project" value="LOCAL" />
       <updated>1673652207522</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="б">
+      <created>1673652546019</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1673652546019</updated>
+    </task>
+    <task id="LOCAL-00019" summary="б">
+      <created>1673652557817</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1673652557817</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -209,6 +227,7 @@
     <MESSAGE value="comp" />
     <MESSAGE value="UI" />
     <MESSAGE value="UnitTests" />
-    <option name="LAST_COMMIT_MESSAGE" value="UnitTests" />
+    <MESSAGE value="б" />
+    <option name="LAST_COMMIT_MESSAGE" value="б" />
   </component>
 </project>

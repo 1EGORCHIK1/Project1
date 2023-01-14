@@ -4,6 +4,7 @@ import java.io.*;
 import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.net.UnknownHostException;
 import java.util.List;
 import java.util.Scanner;
 import java.util.regex.Matcher;
@@ -137,12 +138,12 @@ public class Project {
         }
     }
 
-    public void initServer(int port){
+    public void initServer(int port) {
         while (s == null) {
             try {
-                s = new Socket(InetAddress.getLocalHost(), port);
+                s = new Socket(InetAddress.getLocalHost(), port); // Подключиться к серверу
             } catch (IOException e) {
-                // System.out.println("error");
+
             }
         }
 
